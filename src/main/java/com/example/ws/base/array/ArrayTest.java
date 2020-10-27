@@ -1,7 +1,10 @@
 package com.example.ws.base.array;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public class ArrayTest {
@@ -27,6 +30,9 @@ public class ArrayTest {
              collect) {
             System.out.println(s);
         }
-
+        List<Object> objects = Collections.synchronizedList(new ArrayList<>(16));
+        objects.listIterator();
+        new CopyOnWriteArrayList<>();
+        new ConcurrentHashMap<>();
     }
 }

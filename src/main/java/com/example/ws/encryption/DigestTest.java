@@ -1,8 +1,8 @@
 package com.example.ws.encryption;
 
+import com.example.ws.utils.DateUtils;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.io.IOUtils;
 
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
@@ -15,7 +15,7 @@ public class DigestTest {
         InputStream in;
         try {
              in = new URL( "http://commons.apache.org" ).openStream();
-            System.out.println( IOUtils.toString( in ) );
+            //System.out.println( IOUtils.toString( in ) );
         }catch (Exception e){
 
         }
@@ -44,7 +44,7 @@ public class DigestTest {
         System.out.println("Base64 解码后："+str);
     }
     public static void main(String[] args) {
-       decodeTest("MTEyMzM=");
-        encodeTest("MTEyMzM=");
+        String specifiedDayAfter = DateUtils.getSpecifiedDayAfter("2020-8-12", 100);
+        System.out.println(specifiedDayAfter);
     }
 }
