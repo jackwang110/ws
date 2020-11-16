@@ -8,6 +8,6 @@ public class Client {
     }
 
     public Prototype startClone(Prototype prototype1){
-        return (Prototype)prototype1.clone();
+        return prototype1.clone();
     }
 }

@@ -11,8 +11,10 @@ public class PrototypeTest {
         List hobbies = new ArrayList();
         protypeA.setHobbies(hobbies);
         System.out.println(protypeA);
+
         //创建client,准备开始克隆
         Client client = new Client(protypeA);
+
         ConcreteProtypeA prototype = (ConcreteProtypeA)client.startClone(protypeA);
         System.out.println(prototype);
 
