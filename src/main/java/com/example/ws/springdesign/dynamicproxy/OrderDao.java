@@ -1,4 +1,4 @@
-package com.example.ws.springdesign.staticproxy;
+package com.example.ws.springdesign.dynamicproxy;
 
 public class OrderDao {
     public int insert(Order order){

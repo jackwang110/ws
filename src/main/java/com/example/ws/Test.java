@@ -6,6 +6,8 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 import java.util.Random;
+import java.util.concurrent.BlockingDeque;
+import java.util.concurrent.BlockingQueue;
 
 public class Test {
     public static void main(String[] args) {
@@ -24,6 +26,8 @@ public class Test {
             System.out.println(sdf.format(date)+getStringRandom(4)+"_EDM");
 
         }
+//        BlockingQueue blockingQueue = new BlockingDeque<>();
+//        blockingQueue.add("a");
 
     }
   /*  public static boolean isToday(Long second) {

@@ -1,26 +1,34 @@
 package com.example.ws.springdesign.staticproxy;
 
-public class OrderServiceStaticProxy {
-    public final static String DEFEAULT_SOURCE = null;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-    public final static ThreadLocal<String> local = new ThreadLocal<String>();
+public class OrderServiceStaticProxy implements IOrderService {
+    private SimpleDateFormat dateFormat = new SimpleDateFormat("YYYY");
 
-    public static void clear(){
-        local.remove();
+    private IOrderService orderService;
+
+    public OrderServiceStaticProxy(IOrderService orderService){
+        this.orderService = orderService;
     }
 
-    public static String get(){
-       return local.get();
+    @Override
+    public int createOrder(Order order) {
+        before();
+        long time = order.getCreateTime();
+        Integer dbRout = Integer.valueOf(dateFormat.format(new Date(time)));
+        DynamicDataSourceEntry.set(dbRout);
+        System.out.println("静态代理类自动分配到");
+        orderService.createOrder(order);
+        after();
+        return 0;
+    }
+    private void before(){
+        System.out.println("代理之前");
+    }
+    private void after(){
+        System.out.println("代理之后");
     }
 
-    public static void restore(){
-        local.set(DEFEAULT_SOURCE);
-    }
 
-    public static void set(String dataSource){
-        local.set(dataSource);
-    }
-    public static void set(int year){
-        local.set("DB" + year);
-    }
 }

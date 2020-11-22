@@ -1,4 +1,4 @@
-package com.example.ws.springdesign.staticproxy;
+package com.example.ws.springdesign.dynamicproxy;
 
 public class OrderService implements IOrderService {
     private OrderDao orderDao;
