@@ -1,10 +1,12 @@
 package com.example.ws;
 
+import cn.hutool.json.JSONUtil;
 import org.springframework.util.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.Objects;
 import java.util.Random;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
@@ -19,16 +21,18 @@ public class Test {
         Date date3 = DateUtils.parseDate(date2);
         System.out.println(DateUtils.getDaysBetween(date3,date1));*/
         // 测试
-        for (int i = 0; i < 10; i++) {
+   /*     for (int i = 0; i < 10; i++) {
             Date date = new Date();
             SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd");
             System.out.println();
             System.out.println(sdf.format(date)+getStringRandom(4)+"_EDM");
 
-        }
+        }*/
 //        BlockingQueue blockingQueue = new BlockingDeque<>();
 //        blockingQueue.add("a");
+//        System.out.println( Objects.hash("name11"));
 
+//        System.out.println(JSONUtil.parseArray());
     }
   /*  public static boolean isToday(Long second) {
         if (second == null) {
