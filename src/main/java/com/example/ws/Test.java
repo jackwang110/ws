@@ -5,9 +5,7 @@ import org.springframework.util.StringUtils;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.util.Date;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.BlockingQueue;
 
@@ -43,6 +41,7 @@ public class Test {
         String compare = sf.format(new Date(second * 1000L));
         return today.equals(compare);
     }*/
+  List list = new ArrayList();
   public static String getStringRandom(int length) {
       String val = "";
       Random random = new Random();
@@ -62,4 +61,6 @@ public class Test {
       }
       return val;
   }
+
+
 }
